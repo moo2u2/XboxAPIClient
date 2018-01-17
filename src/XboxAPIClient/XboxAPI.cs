@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using XboxAPIClient.Models.V2;
 
@@ -34,7 +33,7 @@ namespace XboxAPIClient
             return executeAndDeserialize<AccountXuid>(request);
         }
 
-        public Task<Gamercard> Gamercard(string xuid)
+        public Task<Gamercard> Gamercard(long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/gamercard");
             request.AddUrlSegment("xuid", xuid);
@@ -48,7 +47,7 @@ namespace XboxAPIClient
             return executeAndDeserialize<GamertagXuid>(request);
         }
 
-        public Task<GameStats> GameStats(string xuid, string titleId)
+        public Task<GameStats> GameStats(long xuid, string titleId)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/game-stats/{titleId}");
             request.AddUrlSegment("xuid", xuid);
@@ -56,51 +55,51 @@ namespace XboxAPIClient
             return executeAndDeserialize<GameStats>(request);
         }
 
-        public Task<Presence> Presence(string xuid)
+        public Task<Presence> Presence(long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/presence");
             request.AddUrlSegment("xuid", xuid);
             return executeAndDeserialize<Presence>(request);
         }
 
-        public Task<Profile> Profile(string xuid)
+        public Task<Profile> Profile(long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/profile");
             request.AddUrlSegment("xuid", xuid);
             return executeAndDeserialize<Profile>(request);
         }
 
-        public Task<Xbox360Games> Xbox360Games(string xuid)
+        public Task<Xbox360Games> Xbox360Games(long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xbox360games");
             request.AddUrlSegment("xuid", xuid);
             return executeAndDeserialize<Xbox360Games>(request);
         }
 
-        public Task<List<Xbox360GameAchievement>> Xbox360GameAchievements(string titleId, string xuid)
+        public Task<Xbox360GameAchievement[]> Xbox360GameAchievements(string titleId, long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/achievements/{titleId}");
             request.AddUrlSegment("titleId", titleId);
             request.AddUrlSegment("xuid", xuid);
-            return executeAndDeserialize<List<Xbox360GameAchievement>>(request);
+            return executeAndDeserialize<Xbox360GameAchievement[]>(request);
         }
 
-        public Task<List<XboxOneGameAchievement>> XboxOneGameAchievements(string titleId, string xuid)
+        public Task<XboxOneGameAchievement[]> XboxOneGameAchievements(string titleId, long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/achievements/{titleId}");
             request.AddUrlSegment("titleId", titleId);
             request.AddUrlSegment("xuid", xuid);
-            return executeAndDeserialize<List<XboxOneGameAchievement>>(request);
+            return executeAndDeserialize<XboxOneGameAchievement[]>(request);
         }
 
-        public Task<XboxOneGames> XboxOneGames(string xuid)
+        public Task<XboxOneGames> XboxOneGames(long xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xboxonegames");
             request.AddUrlSegment("xuid", xuid);
             return executeAndDeserialize<XboxOneGames>(request);
         }
 
-        public Task<XuidGamertag> XuidGamertag(string xuid)
+        public Task<XuidGamertag> XuidGamertag(long xuid)
         {
             RestRequest request = new RestRequest("/v2/gamertag/{xuid}");
             request.AddUrlSegment("xuid", xuid);

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace XboxAPIClient.Models.V2
+﻿namespace XboxAPIClient.Models.V2
 {
     public class TitleAssociation
     {
@@ -20,7 +18,7 @@ namespace XboxAPIClient.Models.V2
 
     public class Progression
     {
-        public List<Requirement> requirements { get; set; }
+        public Requirement[] requirements { get; set; }
         public string timeUnlocked { get; set; }
     }
 
@@ -52,11 +50,11 @@ namespace XboxAPIClient.Models.V2
         public int id { get; set; }
         public string serviceConfigId { get; set; }
         public string name { get; set; }
-        public List<TitleAssociation> titleAssociations { get; set; }
+        public TitleAssociation[] titleAssociations { get; set; }
         public string progressState { get; set; }
         public Progression progression { get; set; }
-        public List<MediaAsset> mediaAssets { get; set; }
-        public List<string> platforms { get; set; }
+        public MediaAsset[] mediaAssets { get; set; }
+        public string[] platforms { get; set; }
         public bool isSecret { get; set; }
         public string description { get; set; }
         public string lockedDescription { get; set; }
@@ -64,7 +62,7 @@ namespace XboxAPIClient.Models.V2
         public string achievementType { get; set; }
         public string participationType { get; set; }
         public object timeWindow { get; set; }
-        public List<Reward> rewards { get; set; }
+        public Reward[] rewards { get; set; }
         public string estimatedTime { get; set; }
         public object deeplink { get; set; }
         public bool isRevoked { get; set; }

@@ -10,7 +10,7 @@ namespace XboxAPIClient.UnitTests
         private const string testApiKey = "<YOUR_API_KEY_HERE>";
 
         private const string testGamertag = "P3";
-        private const string testXuid = "2706851026034373";
+        private const long testXuid = 2706851026034373;
         private const string xbox360TitleId = "1463158738";
         private const string xboxOneTitleId = "983730484";
 

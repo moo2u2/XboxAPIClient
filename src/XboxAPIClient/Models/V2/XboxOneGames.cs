@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace XboxAPIClient.Models.V2
+﻿namespace XboxAPIClient.Models.V2
 {
     public class XboxOneTitle
     {
@@ -23,7 +21,7 @@ namespace XboxAPIClient.Models.V2
 
     public class XboxOneGames
     {
-        public List<XboxOneTitle> titles { get; set; }
+        public XboxOneTitle[] titles { get; set; }
         public XboxOnePagingInfo pagingInfo { get; set; }
     }
 }

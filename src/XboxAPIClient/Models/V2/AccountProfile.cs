@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace XboxAPIClient.Models.V2
+﻿namespace XboxAPIClient.Models.V2
 {
     public class HomeAddressInfo
     {
@@ -15,7 +13,7 @@ namespace XboxAPIClient.Models.V2
     public class AccountProfile
     {
         public object userKey { get; set; }
-        public List<object> administeredConsoles { get; set; }
+        public object[] administeredConsoles { get; set; }
         public string dateOfBirth { get; set; }
         public string email { get; set; }
         public string firstName { get; set; }
