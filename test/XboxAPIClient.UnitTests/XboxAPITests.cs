@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using XboxAPIClient.Models.V2;
 
 namespace XboxAPIClient.UnitTests
@@ -89,7 +88,7 @@ namespace XboxAPIClient.UnitTests
         [TestMethod]
         public void Xbox360GameAchievements_ReturnsResponse()
         {
-            List<Xbox360GameAchievement> response = api.Xbox360GameAchievements(xbox360TitleId, testXuid).GetAwaiter()
+            Xbox360GameAchievement[] response = api.Xbox360GameAchievements(xbox360TitleId, testXuid).GetAwaiter()
                 .GetResult();
             Assert.IsNotNull(response);
         }
@@ -97,7 +96,7 @@ namespace XboxAPIClient.UnitTests
         [TestMethod]
         public void XboxOneGameAchievements_ReturnsResponse()
         {
-            List<XboxOneGameAchievement> response = api.XboxOneGameAchievements(xboxOneTitleId, testXuid).GetAwaiter()
+            XboxOneGameAchievement[] response = api.XboxOneGameAchievements(xboxOneTitleId, testXuid).GetAwaiter()
                 .GetResult();
             Assert.IsNotNull(response);
         }
